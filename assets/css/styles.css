@@ -1,0 +1,576 @@
+body {
+    background: #111;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #fff;
+    position: relative;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+}
+
+.login-card {
+    background: #18181b;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px 0 #000a;
+    padding: 40px 32px 32px 32px;
+    min-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: 340px;
+}
+
+.error-message {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    text-align: center;
+    max-width: 80%;
+}
+
+.login-logo {
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 80px 56px 80px;
+    grid-template-rows: 12px 2px 12px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 12px;
+}
+
+.logo-detail.left-above {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end;
+}
+
+.logo-detail.left {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: end;
+    right: 10px;
+    position: inherit;
+}
+
+.logo-detail.left-down {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: end;
+}
+
+.logo-circle {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: center;
+}
+
+.logo-detail.right-above {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: start;
+}
+
+.logo-detail.right {
+    grid-column: 3;
+    grid-row: 2;
+    justify-self: start;
+    left: 10px;
+    position: inherit;
+}
+
+.logo-detail.right-down {
+    grid-column: 3;
+    grid-row: 3;
+    justify-self: start;
+}
+
+.logo-detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    height: 12px;
+    gap: 6px;
+}
+
+.dot {
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.dot.small {
+    width: 3px;
+    height: 3px;
+    background: #1e40afa1;
+    animation: colorShift1 4s ease-in-out infinite;
+}
+
+.dot.medium {
+    width: 5px;
+    height: 5px;
+    background: #3b82f6;
+    animation: colorShift2 3.5s ease-in-out infinite;
+}
+
+.dot.large {
+    width: 7px;
+    height: 7px;
+    background: #60a5fa;
+    animation: colorShift3 3s ease-in-out infinite;
+}
+
+@keyframes colorShift1 {
+
+    0%,
+    100% {
+        background: #1e40af;
+        transform: scale(1);
+    }
+
+    25% {
+        background: #3730a3;
+        transform: scale(1.1);
+    }
+
+    50% {
+        background: #1d4ed8;
+        transform: scale(0.9);
+    }
+
+    75% {
+        background: #2563eb;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes colorShift2 {
+
+    0%,
+    100% {
+        background: #3b82f6;
+        transform: scale(1);
+    }
+
+    30% {
+        background: #1d4ed8;
+        transform: scale(1.15);
+    }
+
+    60% {
+        background: #60a5fa;
+        transform: scale(0.85);
+    }
+
+    90% {
+        background: #2563eb;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes colorShift3 {
+
+    0%,
+    100% {
+        background: #60a5fa;
+        transform: scale(1);
+    }
+
+    20% {
+        background: #93c5fd;
+        transform: scale(0.9);
+    }
+
+    40% {
+        background: #3b82f6;
+        transform: scale(1.2);
+    }
+
+    80% {
+        background: #1e40af;
+        transform: scale(1.1);
+    }
+}
+
+.logo-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #222;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px #0004;
+    animation: logoGlow 5s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 2px 8px #0004, 0 0 20px rgba(0, 112, 243, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 4px 16px #0006, 0 0 30px rgba(0, 112, 243, 0.3);
+    }
+}
+
+h2 {
+    margin: 0 0 8px 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.01em;
+}
+
+.signup-link {
+    font-size: 0.95rem;
+    color: #aaa;
+    margin-bottom: 18px;
+}
+
+.signup-link a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.input-group input {
+    width: 330px;
+    display: block;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: none;
+    background: #23232b;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 2px;
+    box-shadow: 0 1px 2px #0002;
+    transition: background 0.2s;
+    position: relative;
+    padding-left: 36px;
+    /* Espaço para o ícone */
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    background: #26263a;
+}
+
+.input-group i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    z-index: 2;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px 0;
+    background: #0070f3;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.login-btn:hover {
+    background: #0059c9;
+}
+
+.or-divider {
+    text-align: center;
+    color: #888;
+    margin: 10px 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #444, transparent);
+    margin: 0 16px;
+}
+
+.or-divider::before {
+    background: linear-gradient(to right, transparent, #444);
+}
+
+.or-divider::after {
+    background: linear-gradient(to left, transparent, #444);
+}
+
+.social-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+.social-btn {
+    background: #23232b;
+    border: none;
+    border-radius: 8px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px #0002;
+}
+
+.social-btn:hover {
+    background: #2d2d3a;
+}
+
+.social-btn.apple span svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    /* Define a cor do SVG */
+}
+
+.social-btn.google span svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-btn.x span svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    /* Define a cor do SVG */
+}
+
+.background-circuit {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.background-circuit>div {
+    position: absolute;
+    border: 1px solid #333;
+    opacity: 0.4;
+}
+
+.background-circuit>div::before,
+.background-circuit>div::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #444;
+    border-radius: 50%;
+}
+
+/* Trilhas conectoras */
+.background-circuit::before,
+.background-circuit::after {
+    content: '';
+    position: absolute;
+    border: 1px solid #333;
+    opacity: 0.3;
+}
+
+/* Trilha horizontal superior */
+.background-circuit::before {
+    top: 120px;
+    left: 240px;
+    right: 240px;
+    height: 0;
+    border-top: 1px dotted #333;
+}
+
+/* Trilha horizontal inferior */
+.background-circuit::after {
+    bottom: 120px;
+    left: 240px;
+    right: 240px;
+    height: 0;
+    border-top: 1px dotted #333;
+}
+
+.left-top {
+    top: 60px;
+    left: 60px;
+    width: 180px;
+    height: 120px;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0;
+}
+
+.left-top::before {
+    top: -2px;
+    left: -2px;
+}
+
+.left-top::after {
+    bottom: -1px;
+    right: -40px;
+    width: 40px;
+    height: 1px;
+    background: #333;
+    border-radius: 0;
+}
+
+.left-bottom {
+    bottom: 60px;
+    left: 60px;
+    width: 180px;
+    height: 120px;
+    border-right: none;
+    border-top: none;
+    border-radius: 0;
+}
+
+.left-bottom::before {
+    top: -2px;
+    left: -2px;
+}
+
+.left-bottom::after {
+    top: -1px;
+    right: -40px;
+    width: 40px;
+    height: 1px;
+    background: #333;
+    border-radius: 0;
+}
+
+.right-top {
+    top: 60px;
+    right: 60px;
+    width: 180px;
+    height: 120px;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 0;
+}
+
+.right-top::before {
+    top: -2px;
+    right: -2px;
+}
+
+.right-top::after {
+    bottom: -1px;
+    left: -40px;
+    width: 40px;
+    height: 1px;
+    background: #333;
+    border-radius: 0;
+}
+
+.right-bottom {
+    bottom: 60px;
+    right: 60px;
+    width: 180px;
+    height: 120px;
+    border-left: none;
+    border-top: none;
+    border-radius: 0;
+}
+
+.right-bottom::before {
+    bottom: -2px;
+    right: -2px;
+}
+
+.right-bottom::after {
+    top: -1px;
+    left: -40px;
+    width: 40px;
+    height: 1px;
+    background: #333;
+    border-radius: 0;
+}
+
+/* Conexões verticais ao card central */
+.login-card::before,
+.login-card::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #333, transparent);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.login-card::before {
+    top: -120px;
+    left: 50%;
+    height: 120px;
+    transform: translateX(-50%);
+}
+
+.login-card::after {
+    bottom: -120px;
+    left: 50%;
+    height: 120px;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        min-width: 90vw;
+        padding: 24px 8vw;
+    }
+}
+
+/* Estilos para o botão secundário */
+.btn-secondary {
+    background-color: rgb(255, 60, 60);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-secondary:hover {
+    background-color: rgb(255, 24, 24);
+    color: #fff;
+}
