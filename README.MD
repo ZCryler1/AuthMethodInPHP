@@ -1,14 +1,14 @@
-## Sistema de Login usando SQLite e PHP
+# Sistema de Login usando SQLite e PHP
 
 Este é um exemplo simples de um sistema de login utilizando PHP e SQLite. O sistema permite que usuários se registrem e façam login, armazenando as informações em um banco de dados SQLite.
 
 
-### Requisitos
+## Requisitos
 - PHP 7.0 ou superior
 - Extensão SQLite3 habilitada no PHP
 - Servidor web (como Apache ou Nginx) configurado para executar scripts PHP
 
-### Estrutura do Projeto
+## Estrutura do Projeto
 ```
 .
 ├── assets
@@ -40,15 +40,15 @@ Este é um exemplo simples de um sistema de login utilizando PHP e SQLite. O sis
 ├── README.md // Este arquivo
 └── .gitignore // Arquivos e pastas a serem ignorados pelo Git
 ```
-### Configuração do Banco de Dados
+## Configuração do Banco de Dados
 1. Certifique-se de que a extensão SQLite3 está habilitada no seu PHP.
 2. Execute o script `init.php` para criar as tabelas necessárias no banco de dados SQLite.
 ```bash
 php database/init.php
 ```
-### Configuração do Servidor Web
+## Configuração do Servidor Web
 Certifique-se de que o servidor web está configurado para apontar para a pasta `public`. Por exemplo, se estiver usando o Apache, você pode configurar o `DocumentRoot` para apontar para a pasta `public`.
-### Uso
+## Uso
 1. Acesse `http://seu-servidor/index.php` para ver a página de login.
 2. Registre um novo usuário acessando `http://seu-servidor/register.php`.
 3. Após o registro, faça login na página de login.
@@ -56,11 +56,11 @@ Certifique-se de que o servidor web está configurado para apontar para a pasta 
 5. Você pode configurar a autenticação de dois fatores acessando `http://seu-servidor/setup-2fa.php`.
 6. Após configurar a autenticação de dois fatores, você precisará verificar o código gerado pelo Google Authenticator na página de login.
 
-### Contribuição
+## Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests para melhorias ou correções.
 
-### Known Issues
-# Com o tempo vou adicionando mais funcionalidades e corrigindo problemas, mas atualmente o sistema tem algumas limitações:
+## Known Issues
+### Com o tempo vou adicionando mais funcionalidades e corrigindo problemas, mas atualmente o sistema tem algumas limitações:
 ❌ O sistema de login não possui criptografia avançada para senhas (usa `password_hash` e `password_verify`, mas não é o suficiente para produção).
 ❌ O sistema de login não possui proteção contra SQL Injection (embora use prepared statements, ainda há espaço para melhorias).
 ❌ O sistema de login não possui proteção contra ataques de força bruta (não há limitação de tentativas de login).
